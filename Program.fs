@@ -88,3 +88,12 @@ oswin |> List.iter (fun movie ->
 
 //Part E
 
+let time runlen =
+    let hr = runlen / 60
+    let min = runlen % 60
+    sprintf "%dh %02dmin" hr min
+
+printfn "Hour:"
+movls |> List.iter (fun movie -> 
+printfn "%s  %s" movie.Name (time movie.runlen)
+)
